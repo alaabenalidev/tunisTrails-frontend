@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/assets/photo/signup.jpg');
+}
+
+.contain {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  /* Set smaller width */
+  max-width: 700px;
+  /* Limit the maximum width */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.85);
+  /* Light background with some opacity */
+  backdrop-filter: blur(10px);
+  /* Apply a blur effect */
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 16px 28px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: black;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+}
+
+.btn:hover {
+  background-color: #32CD32;
+  color: white;
+  /* Change text color to white when hovering */
+}
+
+p a {
+  color: #32CD32;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 16px 28px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: white;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 30px;
+}
+
+.back-button:hover {
+  background-color: White;
+  color: #32CD32;
+}

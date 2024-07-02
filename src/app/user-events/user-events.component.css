@@ -1,0 +1,213 @@
+/* Profile Picture */
+.profile-pic{
+    display: inline-block;
+    vertical-align: middle;
+     width: 50px;
+     height: 50px;
+     overflow: hidden;
+    border-radius: 50%;
+ }
+ 
+ .profile-pic img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+ }
+ .profile-menu .dropdown-menu {
+   right: 0;
+   left: unset;
+ }
+ .profile-menu .fa-fw {
+   margin-right: 10px;
+ }
+ 
+ .toggle-change::after {
+   border-top: 0;
+   border-bottom: 0.3em solid;
+ }
+ #navbarSupportedContent{
+  display: flex;
+  margin-left: 300px;
+  justify-content: space-between;
+
+ }
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-item {
+  margin-right: 80px; /* Adjust the spacing as needed */
+}
+
+.nav-item:last-child {
+  margin-right: 0; /* Remove margin from the last item */
+}
+.navbar-nav .nav-link .fas {
+  font-size: 25px; /* Adjust the font size as needed */
+}
+
+/****************************************Events Cards Css************************************/
+.events-box {
+    width: 100%; /* Full width */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Padding around the box */
+    max-height:1000px; /* Adjust max height as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: add border */
+    border-radius: 8px; /* Optional: add border radius */
+}
+
+.events-container {
+    flex-direction: column; /* Arrange items vertically */
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 400px; /* Adjust max height as needed */
+    gap: 50px; /* Space between cards */
+    
+}
+
+.event-card {
+    width: 38%; /* Adjust width as needed */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Space between cards */
+}
+
+
+.image {
+    height: 100px;
+    width: 150px;
+    overflow: hidden;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-title {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.event-description {
+    margin: 0;
+}
+
+
+.comment-input {
+    width: 80%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-comment-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #32CD32;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-comment-btn:hover {
+    background-color: #228B22; /* Darker shade of green for hover effect */
+}
+
+.rate {
+    float: left;
+    margin-left: 145px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+
+
+.button{
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #32CD32;
+    border: none;
+    border-radius: 1px;
+    text-decoration: none;
+    margin-left: 28%;
+    margin-top: 10%; /* Adjust margin as needed */
+    transition: background-color 0.3s;
+}
+
+.buttno:hover {
+    background-color: #23c483;
+}
+
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter-bar label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.filter-bar select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+.filter-bar label{
+    margin-left: 15px;
+}
+.filter-bar input[type="text"] {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    margin-left: 10px; /* Add some space between the select and the input */
+}

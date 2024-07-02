@@ -1,0 +1,549 @@
+*{
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+nav {
+  background: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background to the navbar */
+  height: 80px; /* Adjust the height of the navbar */
+  width: 85%; /* Fixed width */
+  margin: 20px auto 0; /* Add margin-top for spacing */
+  border-radius: 1%; /* Optional: Add rounded corners */
+  display: flex;
+  justify-content: center; /* Center the nav-container horizontally */
+  align-items: center; /* Center the nav-container vertically */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+  position: relative; /* Position the navbar relative to its containing element */
+  z-index: 10; /* Ensure the navbar is above the background image */
+}
+label.logo{
+  color: #32CD32;
+  font-size: 30px;
+  line-height: 80px;
+  padding: 220px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+span{
+  color: #000000;
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: black;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+a.active,a:hover{
+  background: #32CD32;
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+
+/****************************SignUp Button********************************/
+
+.signup-button {
+  padding: 1.3em 2em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000000;
+  background-color: #fefefe;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px #32CD32(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 20px; /* Adjust the spacing between buttons */
+}
+
+/*********************************Background images**********************/
+.background-section {
+  background-image: url('/assets/photo/home.jpg');
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 120px); /* Adjust height as needed */
+}
+
+.title {
+  position: absolute;
+  top: 50%; /* Position the title vertically centered */
+  left: 50%; /* Position the title horizontally centered */
+  transform: translate(-50%, -50%); /* Center the title */
+  color: #ffffff; /* Adjust the title color */
+  font-size: 3rem; /* Adjust the title font size */
+  text-align: center;
+}
+
+
+.title-container {
+  position: absolute;
+  top: 40%; /* Position the container vertically centered */
+  left: 50%; /* Position the container horizontally centered */
+  transform: translate(-50%, -50%); /* Center the container */
+  text-align: center; /* Center the text horizontally */
+  text-transform: uppercase;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.title-container h1 {
+  font-size: 2.5rem; /* Adjust the font size */
+  color: #ffffff; /* Adjust the text color */
+  /* Add any additional styles as needed */
+}
+
+.book-now-button {
+  display: inline-block;
+  padding: 20px 40px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #32CD32;
+  border: none;
+  border-radius: 1px;
+  text-decoration: none;
+  margin-left: 43%;
+  margin-top: 23%; /* Adjust margin as needed */
+  transition: background-color 0.3s;
+}
+
+.book-now-button:hover {
+  background-color: #23c483;
+}
+
+/*****************************************************************************************************/
+article {
+  --img-scale: 1.001;
+  --title-color: black;
+  --link-icon-translate: -20px;
+  --link-icon-opacity: 0;
+  margin-top: 100px;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: none;
+  background: #fff;
+  transform-origin: center;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+article a::after {
+  position: absolute;
+  inset-block: 0;
+  inset-inline: 0;
+  cursor: pointer;
+  content: "";
+}
+
+/* basic article elements styling */
+article h2 {
+  margin: 0 0 18px 0;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.9rem;
+  letter-spacing: 0.06em;
+  color: var(--title-color);
+  transition: color 0.3s ease-out;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+article img {
+  max-width: 100%;
+  transform-origin: center;
+  transform: scale(var(--img-scale));
+  transition: transform 0.4s ease-in-out;
+}
+
+.article-body {
+  padding: 24px;
+}
+
+article a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #28666e;
+}
+
+article a:focus {
+  outline: 1px dotted #28666e;
+}
+
+article a .icon {
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  transform: translateX(var(--link-icon-translate));
+  opacity: var(--link-icon-opacity);
+  transition: all 0.3s;
+}
+
+/* using the has() relational pseudo selector to update our custom properties */
+article:has(:hover, :focus) {
+  --img-scale: 1.1;
+  --title-color: #28666e;
+  --link-icon-translate: 0;
+  --link-icon-opacity: 1;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+
+/************************ 
+Generic layout (demo looks)
+**************************/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+
+.articles {
+  display: grid;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+@media screen and (max-width: 960px) {
+  article {
+    container: card/inline-size;
+  }
+  .article-body p {
+    display: none;
+  }
+}
+
+@container card (min-width: 380px) {
+  .article-wrapper {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+  }
+  .article-body {
+    padding-left: 0;
+  }
+  figure {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  figure img {
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+.title {
+  display: flex;
+  margin-top: 1500px;
+  align-items: center;  
+  height: 100vh; /* Set the height to fill the entire viewport */
+}
+
+.title p {
+  color: #000000;
+  text-align: center;
+  text-transform: uppercase; /* Make text uppercase */
+  font-size: 24px; /* Adjust font size as needed */
+}
+
+.title p span {
+  color: #32CD32; /* Change color of 'DESTINATION' */
+  font-weight: bold; /* Make 'DESTINATION' bold */
+  margin-right: 5px; /* Add some space between 'DESTINATION' and 'Explore' */
+}
+
+
+.img{
+  margin-left: 180px;
+  margin-top: 180px;
+  height: 500px;
+  width: 550px;
+}
+
+
+
+/*************************************************************************/
+
+/* border-box.component.css */
+.border-box {
+  margin-top: 100px;
+  border: 2px solid #ccc;
+  padding: 20px;
+  background-color: #ccc;
+}
+
+.partner-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.partner {
+  width: 25%;
+  margin-bottom: 20px;
+  margin-left: 0px;
+}
+
+.partner img {
+  max-width: 100%;
+}
+
+.partner p {
+  margin-top: 10px;
+}
+
+/*************************************************************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;900&display=swap');
+
+body {
+  background: #f2f2f2;
+}
+
+.container {
+  margin-left: 1020px;
+  transform: translate(-50%, -50%);
+  height: 400px;
+  width: 600px;
+  background: #f2f2f2;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 20px 8px #d0d0d0;
+  position: absolute; /* Add position absolute */
+  top: 313%; /* Adjust the top position as needed */
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%);
+  text-align: justify;
+  color: black;
+  padding: 40px;
+  font-family: 'Merriweather', serif;
+}
+.front{
+  margin-top: 30px;
+  margin-bottom: -20px;
+  margin-left: 70px;
+}
+h1 {
+  font-weight: 900;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  font-family: 'Merriweather', serif;
+  color: black ;
+}
+
+h3 {
+  font-weight: 300;
+}
+
+.flap {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.container:hover .flap::before{
+  transform: translatex(-300px);
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 20px 40px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #32CD32;
+  border: none;
+  border-radius: 1px;
+  text-decoration: none;
+  margin-left: 34%;
+  margin-top: 10%; /* Adjust margin as needed */
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #23c483;}
+
+
+
+  .titlee {
+    display: flex;
+    margin-top: -250px;
+    align-items: center;  
+    height: 100vh; /* Set the height to fill the entire viewport */
+    margin-left: 600px;
+  }
+  
+  .titlee p {
+    color: #000000;
+    text-align: center;
+    text-transform: uppercase; /* Make text uppercase */
+    font-size: 24px; /* Adjust font size as needed */
+  }
+  
+  .titlee p span {
+    color: #32CD32; /* Change color of 'DESTINATION' */
+    font-weight: bold; /* Make 'DESTINATION' bold */
+    margin-right: 5px; /* Add some space between 'DESTINATION' and 'Explore' */
+  }
+  
+
+
+
+
+  .footer {
+    background-color: #a6a6a6;
+    color: #fff;
+    padding: 50px 0;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer h3 {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .footer p {
+    margin-bottom: 10px;
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .social-links li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .social-links li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .social-links li a:hover {
+    text-decoration: underline;
+  }
+  

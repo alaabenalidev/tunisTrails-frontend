@@ -1,0 +1,13 @@
+.body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .gradient-custom {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/photo/loginc.jpg') no-repeat center center/cover;
+  }
+
+  .custom-background {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background for the card */
+  }

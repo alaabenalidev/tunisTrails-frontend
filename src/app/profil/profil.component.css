@@ -1,0 +1,39 @@
+.container {
+  height: 100vh;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.main-body {
+  margin-top: 60px;
+  /* Ajustez si nécessaire pour éviter le chevauchement avec le bouton */
+}
+
+.row.position-relative {
+  position: relative;
+}
+
+.pencil-icon {
+  position: absolute;
+  right: 10px;
+  /* Ajustez la valeur pour positionner correctement l'icône à droite */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #007bff;
+  cursor: pointer;
+}
+
+.pencil-icon:hover {
+  color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .back-button {
+    top: 10px;
+    left: 10px;
+  }
+}

@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-white text-dark">
+                    <div class="card-body p-4 text-center">
+                        <div class="mb-md-4 mt-md-3 pb-4">
+                            <span class="fa-3x mr-3"><i class="fas fa-user" routerLink="/loginC"></i></span>
+                            <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                            <p class="text-dark-50 mb-4">Please enter your login and password!</p>
+                            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                                <div class="form-outline form-dark mb-3">
+                                    <input type="email" id="email" class="form-control form-control-lg"
+                                        formControlName="email" required>
+                                    <label class="form-label" for="email">Email</label>
+                                    <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)"
+                                        class="text-danger">
+                                        <div *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</div>
+                                        <div *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email format</div>
+                                    </div>
+                                </div>
+                                <div class="form-outline form-dark mb-3">
+                                    <input type="password" id="password" class="form-control form-control-lg"
+                                        formControlName="password" required>
+                                    <label class="form-label" for="password">Password</label>
+                                    <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)"
+                                        class="text-danger">
+                                        <div *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</div>
+                                    </div>
+                                </div>
+                                <p class="small mb-4 pb-lg-2"><a class="text-dark-50" href="#!"
+                                        style="color: #32CD32;">Forgot password?</a></p>
+                                <button class="btn btn-outline-dark btn-lg px-4" type="submit">Login</button>
+                            </form>
+                        </div>
+                        <div>
+                            <p class="mb-2">Don't have an account? <a
+                            class="text-dark-50 fw-bold" style="color: #32CD32;" routerLink="/signup">Sign Up</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

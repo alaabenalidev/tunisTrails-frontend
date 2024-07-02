@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear"
+     viewBox="0 0 16 16">
+  <!-- SVG content -->
+</svg>
+<div class="area"></div>
+<nav class="main-menu">
+  <!-- Navigation content -->
+</nav>
+
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="title">Title:</label>
+    <input type="text" id="title" class="form-control" formControlName="title">
+  </div>
+
+  <div class="form-group">
+    <label for="type">Type Evènement:</label>
+    <select id="type" class="form-control" formControlName="type">
+      <option value="">Sélectionnez un type</option>
+      <option value="Sport">Sport</option>
+      <option value="Culturel">Culturel</option>
+      <option value="Musique">Musique</option>
+      <option value="Autre">Autre</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea id="description" class="form-control" formControlName="description"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="startDate">Start Date:</label>
+    <input type="datetime-local" id="startDate" class="form-control" formControlName="startDate">
+  </div>
+
+  <div class="form-group">
+    <label for="endDate">End Date:</label>
+    <input type="datetime-local" id="endDate" class="form-control" formControlName="endDate">
+  </div>
+
+  <div class="form-group">
+    <label for="latitude">Latitude:</label>
+    <input type="number" id="latitude" class="form-control" formControlName="latitude">
+  </div>
+
+  <div class="form-group">
+    <label for="longitude">Longitude:</label>
+    <input type="number" id="longitude" class="form-control" formControlName="longitude">
+  </div>
+
+  <div class="form-group">
+    <label for="maxParticipants">Max Participants:</label>
+    <input type="number" id="maxParticipants" class="form-control" formControlName="maxParticipants" min="1">
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="eventForm.invalid">Submit</button>
+</form>

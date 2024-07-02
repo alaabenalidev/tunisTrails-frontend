@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<body>
+  <div class="area"></div>
+  <nav class="main-menu">
+    <ul>
+      <li>
+        <a routerLink="/dashboard">
+          <i class="fa fa-calendar-alt fa-2x"></i>
+          <span class="nav-text">
+            Events List
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="agency-signin">
+          <i class="fa fa-user-plus fa-2x"></i>
+          <span class="nav-text">
+            Create Account
+          </span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/list-utilisateur">
+          <i class="fa fa-user fa-2x"></i>
+          <span class="nav-text">
+            Liste utilisateur
+          </span>
+        </a>
+      </li>
+    </ul>
+    <ul class="logout">
+      <li>
+        <a href="javascript:void(0)" (click)="logout()">
+          <i class="fa fa-power-off fa-2x"></i>
+          <span class="nav-text">
+            Logout
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container mt-4">
+    <h2>User List</h2>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>John Doe</td>
+        <td>john.doe@example.com</td>
+        <td>Administrator</td>
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>jane.smith@example.com</td>
+        <td>User</td>
+      </tr>
+      <tr>
+        <td>Michael Johnson</td>
+        <td>michael.johnson@example.com</td>
+        <td>User</td>
+      </tr>
+      <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+</body>
