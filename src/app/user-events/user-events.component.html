@@ -59,40 +59,40 @@
             <label for="search-bar">Search:</label>
             <input type="text" id="search-bar" placeholder="Search...">
         </div>
-        <div class="event-card">
+        <div class="event-card" *ngFor="let item of listReservations">
             <div class="content">
-                <h2 class="title">Explorer la nature </h2>
-                <p class="date">Date: June 30, 2024</p>
-                <p class="date">Longitude: June 30, 2024</p>
-                <p class="date">Latitude: June 30, 2024</p>
-                <p class="date">Max Participants: June 30, 2024</p>
-                <p class="type">Type: Beach Day</p>
-                <p class="location">Ville: hammamet</p>
-                <p class="description">Description: L'évènement est de passer une journée a la plage</p>
+                <h2 class="title">{{ item.event.title }} </h2>
+                <p class="date">Date: {{ item.event.startDate | date: 'MMMM d, YYY' }}</p>
+                <p class="date">Longitude: {{ item.event.longitude }}</p>
+                <p class="date">Latitude: {{ item.event.latitude }}</p>
+                <p class="date">Max Participants: {{ item.event.maxParticipants }}</p>
+                <p class="type">Type: {{ item.event.description }}</p>
+                <p class="location">Ville: {{ item.event.description }}</p>
+                <p class="description">Description: {{ item.event.description }}</p>
 
             </div>
             <!-- Comments section -->
             <div class="comments-section">
-                <input type="text" placeholder="Add a comment..." class="comment-input">
-                <button class="add-comment-btn"><i class="fa fa-comment" aria-hidden="true"></i>
+                <input type="text" placeholder="Add a comment..." class="comment-input" [(ngModel)]="commentText">
+                <button class="add-comment-btn" (click)="submitComment(item.event.idEvent)"><i class="fa fa-comment" aria-hidden="true"></i>
                 </button>
             </div>
             <!-- Rating section -->
             <div class="rate">
-                <input type="radio" id="star5" name="rate" value="5" />
-                <label for="star5" title="text">5 stars</label>
-                <input type="radio" id="star4" name="rate" value="4" />
-                <label for="star4" title="text">4 stars</label>
-                <input type="radio" id="star3" name="rate" value="3" />
-                <label for="star3" title="text">3 stars</label>
-                <input type="radio" id="star2" name="rate" value="2" />
-                <label for="star2" title="text">2 stars</label>
-                <input type="radio" id="star1" name="rate" value="1" />
-                <label for="star1" title="text">1 star</label>
+                <input type="radio" id="star5" name="rate" value="5" (click)="submitRating(item.event.idEvent,5)" />
+                <label for="star5" title="5">5 stars</label>
+                <input type="radio" id="star4" name="rate" value="4" (click)="submitRating(item.event.idEvent,4)" />
+                <label for="star4" title="4">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3" (click)="submitRating(item.event.idEvent,3)" />
+                <label for="star3" title="3">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2" (click)="submitRating(item.event.idEvent,2)" />
+                <label for="star2" title="2">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1" (click)="submitRating(item.event.idEvent,1)" />
+                <label for="star1" title="1">1 star</label>
             </div>
             <a href="#" class="button" routerLink="/reservation">Book Now</a>
         </div>
-        
+
         <!-- More event cards here -->
     </div>
 </body>

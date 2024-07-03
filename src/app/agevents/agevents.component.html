@@ -24,6 +24,14 @@
                 </span>
       </a>
     </li>
+    <li>
+      <a href="list-utilisateur">
+        <i class="fa fa-home fa-x"></i>
+        <span class="nav-text">
+                    Main Users
+                </span>
+      </a>
+    </li>
   </ul>
   <ul class="logout">
     <li>
@@ -76,7 +84,9 @@
         <td>{{ item.type }}</td>
         <td>{{ item.description }}</td>
         <td>
-          <button class="btn btn-danger" (click)="selectedEvent =item" data-bs-toggle="modal" data-bs-target="#confirmationModal">Annuler</button>
+          <button class="btn btn-danger" (click)="selectedEvent =item" data-bs-toggle="modal"
+                  data-bs-target="#confirmationModal">Annuler
+          </button>
         </td>
       </tr>
       </tbody>

@@ -20,7 +20,9 @@ export class AgencySigninComponent {
     password: '',
     role: Role.AGENCY, // Set role as AGENCY
     phoneNumber: '',
-    address: ''
+    address: '',
+    enabled:true,
+    accountLocked:false
   };
 
   constructor(

@@ -16,6 +16,10 @@ export class ReservationService {
     return this.http.post<ReservationModel>(`${this.apiUrl}/add`, reservation);
   }
 
+  getReservationByUser(): Observable<ReservationModel[]> {
+    return this.http.get<ReservationModel[]>(`${this.apiUrl}/by-user`);
+  }
+
   deleteReservationById(reservationId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/delete/${reservationId}`);
   }

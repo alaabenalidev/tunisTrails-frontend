@@ -40,7 +40,9 @@ export class SignupComponent {
         address: this.signupForm.get('address')?.value,
         email: this.signupForm.get('email')?.value,
         password: this.signupForm.get('password')?.value,
-        role: Role.USER // Assuming Role is imported and properly defined
+        role: Role.USER, // Assuming Role is imported and properly defined
+        enabled:true,
+        accountLocked:false
       };
 
       if(this.signupForm.get('password')?.value != this.signupForm.get('confirmPassword')?.value) {

@@ -8,5 +8,7 @@ export interface User {
   address: string;
   email: string;
   password: string;
+  enabled:boolean;
+  accountLocked:boolean;
   role: Role; // Use Role enum
 }
