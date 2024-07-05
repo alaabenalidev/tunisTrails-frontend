@@ -35,4 +35,8 @@ export class UserService {
   disableUser(selectedUserId: number) {
     return this.http.put(`${this.BASE_URL_User}disable/${selectedUserId}`, selectedUserId);
   }
+
+  updateProfile(user: User){
+    return this.http.put(`${this.BASE_URL_User}update/${user.id}`, user);
+  }
 }
