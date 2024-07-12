@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as L from 'leaflet';
 
 @Component({
@@ -6,10 +6,11 @@ import * as L from 'leaflet';
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.css']
 })
-export class EventsComponent implements OnInit  {
+export class EventsComponent implements OnInit {
   map: any;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.initMap();
@@ -24,8 +25,8 @@ export class EventsComponent implements OnInit  {
 
     //add marker on popup
     L.marker([34.0, 9.0]).addTo(this.map)
-    .bindPopup('A pretty CSS popup.<br> Easily customizable.')
-    .openPopup();
-    }
+      .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+      .openPopup();
   }
+}
 
