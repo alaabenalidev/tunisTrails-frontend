@@ -20,8 +20,11 @@ export class UserEventsComponent implements OnInit {
   form: FormGroup;
   commentText: string = "";
   selectedEventId: number = -1;
+  searchKeyword: string = '';
+  selectType: string = '';
 
-  constructor(private reservationService: ReservationService,private eventService:EventService, private router: Router, private fb: FormBuilder, private commentService: CommentService, private ratingService: RatingService) {
+
+  constructor(private reservationService: ReservationService, private eventService: EventService, private router: Router, private fb: FormBuilder, private commentService: CommentService, private ratingService: RatingService) {
     // this.loadReservation()
     this.loadEvents()
     this.form = this.fb.group({
@@ -72,11 +75,18 @@ export class UserEventsComponent implements OnInit {
         alert("Vérifier le nbre de part avec nbre adultes et enfants")
         return;
       }
-      this.reservationService.addReservation(reservation).subscribe(data=>{
+      this.reservationService.addReservation(reservation).subscribe(data => {
         this.router.navigate(['/user-history']);
       })
     } else {
       // Handle form errors if needed
     }
+  }
+
+  searchByKeyword() {
+    this.eventService.searchByCri(this.searchKeyword, this.selectType).subscribe(data => {
+      console.log(data)
+      this.listEvents = data
+    })
   }
 }

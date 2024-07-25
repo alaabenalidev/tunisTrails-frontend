@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {EventService} from "../Services/Event.service";
 import {Router} from "@angular/router";
 
@@ -12,28 +12,49 @@ import {Router} from "@angular/router";
 export class CreateEventComponent implements OnInit {
 
   eventForm: FormGroup;
+  selectedFile: File | undefined;
 
-  constructor(private fb: FormBuilder,private eventService:EventService, private router: Router) {
+  constructor(private fb: FormBuilder, private eventService: EventService, private router: Router) {
     this.eventForm = this.fb.group({
       title: ['', Validators.required],
       type: ['', Validators.required],
+      ville: ['', Validators.required],
+      image: ['', Validators.required],
       description: ['', Validators.required],
       startDate: ['', Validators.required],
       endDate: ['', Validators.required],
       latitude: ['', Validators.required],
       longitude: ['', Validators.required],
-      maxParticipants: [1, [Validators.required,Validators.minLength(1)]],
+      maxParticipants: [1, [Validators.required, Validators.minLength(1)]],
     });
   }
 
   ngOnInit(): void {
   }
 
+  onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0];
+    // Optionally, you can preview the selected image
+    const reader = new FileReader();
+    reader.onload = (e: any) => {
+      // Display image preview if needed
+      // Example: this.previewImage = e.target.result;
+      this.selectedFile = e.target.result;
+      this.eventForm.patchValue({
+        image: e.target.result
+      })
+    };
+    // reader.readAsDataURL(this.selectedFile);
+  }
+
   onSubmit() {
+    this.eventForm.patchValue({
+      image: this.selectedFile
+    })
     if (this.eventForm.valid) {
       // Form is valid, proceed with form data
       console.log(this.eventForm.value);
-      this.eventService.createEvent(this.eventForm.value).subscribe((data)=>{
+      this.eventService.createEvent(this.eventForm.value).subscribe((data) => {
         console.log(data);
         this.router.navigateByUrl("/agevents");
       })

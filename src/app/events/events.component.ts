@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import * as L from 'leaflet';
+import {EventModel} from "../_models/event.model";
+import {EventService} from "../Services/Event.service";
 
 @Component({
   selector: 'app-events',
@@ -8,11 +10,19 @@ import * as L from 'leaflet';
 })
 export class EventsComponent implements OnInit {
   map: any;
+  listEvents: EventModel[] = [];
 
-  constructor() {
+  constructor(private eventService:EventService) {
+  }
+
+  loadEvents() {
+    this.eventService.getAllEvents().subscribe(data => {
+      this.listEvents = data
+    })
   }
 
   ngOnInit(): void {
+    this.loadEvents();
     this.initMap();
   }
 

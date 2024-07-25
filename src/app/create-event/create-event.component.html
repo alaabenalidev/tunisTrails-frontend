@@ -8,6 +8,13 @@
 </nav>
 
 <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+
+  <!-- Upload image input -->
+  <div class="form-group">
+    <label for="image">Upload Image:</label>
+    <input type="file" id="image" class="form-control-file" (change)="onFileSelected($event)">
+  </div>
+
   <div class="form-group">
     <label for="title">Title:</label>
     <input type="text" id="title" class="form-control" formControlName="title">
@@ -17,10 +24,12 @@
     <label for="type">Type Evènement:</label>
     <select id="type" class="form-control" formControlName="type">
       <option value="">Sélectionnez un type</option>
-      <option value="Sport">Sport</option>
-      <option value="Culturel">Culturel</option>
-      <option value="Musique">Musique</option>
-      <option value="Autre">Autre</option>
+      <option value="WALKING">WALKING</option>
+      <option value="CYCLING">CYCLING</option>
+      <option value="FITNESS">FITNESS</option>
+      <option value="BEACH">BEACH</option>
+      <option value="RUNNING">RUNNING</option>
+      <option value="PETS">PETS</option>
     </select>
   </div>
 
@@ -54,5 +63,11 @@
     <input type="number" id="maxParticipants" class="form-control" formControlName="maxParticipants" min="1">
   </div>
 
+  <div class="form-group">
+    <label for="ville">Ville:</label>
+    <input type="text" id="ville" class="form-control" formControlName="ville">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
   <button type="submit" class="btn btn-primary" [disabled]="eventForm.invalid">Submit</button>
 </form>
