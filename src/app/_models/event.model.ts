@@ -1,3 +1,5 @@
+import {User} from "../Classes/User";
+
 export interface EventModel {
   idEvent: number
   title: string
@@ -12,4 +14,5 @@ export interface EventModel {
   maxParticipants: number
   ratingsList: any[]
   commentsList: any[]
+  user:User
 }

@@ -120,6 +120,11 @@
             <img [src]="'data:image/png;base64,'+item.image" alt="Image 1">
           </div>
 
+          <div class="dates text-center m-0 p-0 pt-1">
+<!--              <strong>{{item.user.name}}</strong>-->
+            <strong>Agence</strong> {{item.user.name}}
+          </div>
+
           <div class="dates">
             <div class="start">
               <strong>STARTS</strong> {{ item.startDate | date: 'MMMM d, YYY' }}

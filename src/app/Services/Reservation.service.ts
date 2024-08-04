@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 import {ReservationAddRequest, ReservationModel} from "../_models/Reservation.model";
 
 @Injectable({
@@ -10,7 +10,8 @@ export class ReservationService {
 
   private apiUrl = 'http://localhost:8081/Reservation';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   addReservation(reservation: ReservationAddRequest): Observable<ReservationModel> {
     return this.http.post<ReservationModel>(`${this.apiUrl}/add`, reservation);
@@ -34,5 +35,9 @@ export class ReservationService {
 
   findReservationById(reservationId: number): Observable<ReservationModel> {
     return this.http.get<ReservationModel>(`${this.apiUrl}/findReservationById/${reservationId}`);
+  }
+
+  getReservationByEvent(idEvent: number): Observable<ReservationModel[]> {
+    return this.http.get<ReservationModel[]>(`${this.apiUrl}/by-event/${idEvent}`);
   }
 }

@@ -6,6 +6,8 @@ import {TokenStorageService} from "../_auth/token-storage.service";
 import {AuthService} from "../_auth/auth.service";
 import {User} from '../Classes/User';
 import {UserService} from "../Services/User.Service";
+import {ReservationService} from "../Services/Reservation.service";
+import {ReservationModel} from "../_models/Reservation.model";
 
 
 @Component({
@@ -16,10 +18,11 @@ import {UserService} from "../Services/User.Service";
 export class AgeventsComponent implements OnInit {
 
   listEvents: EventModel[] = [];
+  listReservations: ReservationModel[] = [];
   selectedEvent?: EventModel;
   user!: User;
 
-  constructor(private eventService: EventService, private router: Router, private userService: UserService,private authService: AuthService) {
+  constructor(private reservationService:ReservationService,private eventService: EventService, private router: Router, private userService: UserService,private authService: AuthService) {
 
   }
 
@@ -54,5 +57,12 @@ export class AgeventsComponent implements OnInit {
   logout() {
     this.authService.logout()
     this.router.navigate(['/home']);
+  }
+
+  listParticipant(idEvent: number) {
+    this.reservationService.getReservationByEvent(idEvent).subscribe(reservations => {
+      this.listReservations = reservations
+    })
+
   }
 }
